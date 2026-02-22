@@ -1,0 +1,22 @@
+import React, { use, useEffect, useState } from 'react'
+import Login from './component/Auth/Login'
+import EmployeeDasboard from './component/Dasboard/EmployeeDasboard'
+import AdminDashboard from './component/Dasboard/AdminDashboard'
+import { getLocalStorage, setLocalStorage } from './utils/localStorage'
+
+const App = () => {
+  // useEffect(() => {
+  //   // setLocalStorage();
+  //    getLocalStorage();
+  // },)
+  const [user, setUser] = useState(null);
+  return (
+    <div>
+      {}
+      {/* <EmployeeDasboard/> */}
+      {/* <AdminDashboard/> */}
+    </div>
+  )
+}
+
+export default App

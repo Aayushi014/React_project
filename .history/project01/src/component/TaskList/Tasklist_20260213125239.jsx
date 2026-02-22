@@ -1,0 +1,18 @@
+import React from 'react'
+
+const Tasklist = () => {
+  return (
+    <div id="tasklist" className=' w-full h-[55%] flex justify-start flex-nowrap overflow-x-auto  gap-5 mt-10 py-5'>
+       <div className = "shrink-0 bg-yellow-200 w-75 h-full rounded-lg overflow-hidden">
+        <div className='text-black'>
+           <h3 className='bg-yellow-600 px-2'>High</h3>
+           <h4 clas>13 feb 2025</h4>
+        </div>
+
+       </div>
+      
+    </div>
+  )
+}
+
+export default Tasklist

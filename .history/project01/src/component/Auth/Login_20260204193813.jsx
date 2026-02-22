@@ -1,0 +1,17 @@
+import React from 'react'
+
+const Login = () => {
+  return (
+    <div className='h-screen flex justify-center items-center border-amber-300'>
+      <div>
+            <label className='absolute' for="email">Email:</label>
+            <input required type = 'email' placeholder='Enter email'/>
+
+            <label for="password">Password:</label>
+            <input required type = 'email' placeholder='Enter Password'/>
+      </div>
+    </div>
+  )
+}
+
+export default Login

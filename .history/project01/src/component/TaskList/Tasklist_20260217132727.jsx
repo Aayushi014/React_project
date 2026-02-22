@@ -1,0 +1,17 @@
+import React from 'react'
+import AcceptTask from './AcceptTask'
+import NewTask from './NewTask'
+import CompleteTask from './CompleteTask'
+
+const Tasklist = ({data}) => {
+  return (
+    <div id="tasklist" className=' w-full h-[55%] flex justify-start flex-nowrap overflow-x-auto  gap-5 mt-10 py-5 text-black'>
+      <AcceptTask data = {data}/>
+      <NewTask/>
+      <CompleteTask/>
+      <Faile
+    </div>
+  )
+}
+
+export default Tasklist

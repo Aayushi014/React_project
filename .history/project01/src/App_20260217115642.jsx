@@ -1,0 +1,42 @@
+import { useContext, useEffect, useState } from 'react'
+import Login from './component/Auth/Login'
+import EmployeeDasboard from './component/Dasboard/EmployeeDasboard'
+import AdminDashboard from './component/Dasboard/AdminDashboard'
+import { AuthContext } from './Context/AuthProvider'
+const App = () => {
+  const [user, setUser] = useState(null);
+  const authData = useContext(AuthContext)
+  const [loggedInUserData, setLoggedInUserData] = useState(null);
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("loggedInUser");
+  //   if (loggedInUser) {
+  //     setUser(loggedInUser.role);
+  //     setLoggedInUserData(loggedInUser);
+  //   }
+  // }, [authData])
+  const handleLogin = (email,password) => {
+    if(email === 'admin@example.com' && password === '123') {
+      setUser("admin");
+      localStorage.setItem("loggedInUser", JSON.stringify({role: "admin"}));
+    }else if(authData){
+      const employee = authData.employees.find(emp => emp.email === email && emp.password === password);
+      if(employee){
+        setUser("employees");
+        console.log(employee);
+        setLoggedInUserData(employee);
+        localStorage.setItem("loggedInUser", JSON.stringify({role: "employees"}));
+      }else{
+        alert("Invalid credentials");
+      }
+    }
+  }
+ 
+  return (
+    <div>
+      {!user ? <Login handleLogin={handleLogin}/>:""}
+      {user === "admin" ? <AdminDashboard/>:<EmployeeDasboard data = />}
+    </div>
+  )
+}
+
+export default App
